@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OSM Raw Data Loader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <h1>OSM Raw Data Loader</h1>
+
+    <section>
+      <h2>Load a local OSM file</h2>
+      <p>
+        Select a small <code>.osm</code> (XML) or <code>.json</code> (Overpass
+        JSON) file.
+      </p>
+      <label for="fileInput">Choose file</label>
+      <span id="fileName">No file chosen</span>
+      <input id="fileInput" type="file" accept=".osm,.xml,.json,.txt" />
+      <div id="status" class="status">No file loaded.</div>
+    </section>
+
+    <section class="summary">
+      <h2>Summary</h2>
+      <ul>
+        <li>Nodes: <span id="nodesCount">0</span></li>
+        <li>Ways: <span id="waysCount">0</span></li>
+        <li>Relations: <span id="relsCount">0</span></li>
+        <li>
+          Unique tags (top-level):
+          <span id="tagKeysCount">0</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Preview (first 20 items)</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Type</th>
+              <th>ID</th>
+              <th>Key=Value (selected tags)</th>
+            </tr>
+          </thead>
+          <tbody id="previewBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Notes</h2>
+      <ul class="notes">
+        <li>This prototype lists raw OSM elements only (no map rendering).</li>
+        <li>Use tiny extracts (neighbourhood scale) to keep parsing fast.</li>
+        <li>Data © OpenStreetMap contributors, ODbL.</li>
+      </ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

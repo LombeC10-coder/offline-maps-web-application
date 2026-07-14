@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offline Map Explorer</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <!-- Fullscreen map -->
+    <canvas id="mapCanvas"></canvas>
+
+    <!-- Top-left brand -->
+    <div class="app-brand">
+      <h1>Offline Map Explorer</h1>
+    </div>
+
+    <!-- Top-center search -->
+    <div class="top-search">
+      <div class="search-box">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search places, cafes, landmarks..."
+          autocomplete="off"
+        />
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </div>
+
+    <!-- Top-right actions -->
+    <div class="top-actions">
+      <button id="btnZoomIn" type="button" aria-label="Zoom in">+</button>
+      <button id="btnZoomOut" type="button" aria-label="Zoom out">−</button>
+      <button class="btn" type="button" id="btnReset" disabled>Reset View</button>
+      <button class="btn" type="button" id="btnFit" disabled>Fit to Data</button>
+    </div>
+
+    <!-- Map badge -->
+    <div class="map-badge" id="mapBadge">Lusaka, Zambia</div>
+
+    <!-- Bottom-left layer controls -->
+    <div class="map-controls">
+      
+      <label class="pill">
+        <input type="checkbox" id="toggleCafes" checked />
+        Cafes
+      </label>
+
+      <label class="pill">
+        <input type="checkbox" id="toggleMonuments" checked />
+        Landmarks
+      </label>
+    </div>
+
+    <!-- Landmark popup -->
+    <div id="landmarkPopup" class="landmark-popup hidden"></div>
+
+    <!-- Right-side toolbar -->
+    <div class="side-toolbar">
+      <button id="btnInfo" class="icon-btn" type="button" title="Dataset overview">i</button>
+
+      <label for="fileInput" class="icon-btn" title="Upload map dataset">
+        ⬆
+      </label>
+      <input id="fileInput" type="file" accept=".osm,.xml,.json" hidden />
+    </div>
+
+    <!-- Floating info panel -->
+    <aside id="infoPanel" class="info-panel hidden">
+      <h2>Dataset Overview</h2>
+
+      <p id="loadStatus" class="muted">No dataset loaded.</p>
+
+      <div id="summary" class="muted"></div>
+
+
+      <hr />
+
+      <p id="status">Ready.</p>
+
+      <div class="map-status" id="mapStatus">
+        Upload an OpenStreetMap dataset to begin rendering.
+      </div>
+    </aside>
+  </main>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

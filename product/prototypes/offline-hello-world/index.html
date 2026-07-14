@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Offline – Prototype 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="badge">Prototype 1 · Offline HTML5 Map</div>
+
+    <h1>Hello Offline 👋</h1>
+    <p class="subtitle">
+      This prototype demonstrates that the Service Worker and Cache API are
+      correctly enabling offline functionality.
+    </p>
+
+    <div class="card">
+      <h2>What this prototype demonstrates</h2>
+      <ul>
+        <li>The page loads even when the browser is in <strong>Offline</strong> mode.</li>
+        <li>Static files (HTML, CSS, JS) are cached using the Service Worker.</li>
+        <li>This is the foundation for the final offline HTML5 map application.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>How to test it</h2>
+      <ol>
+        <li>Open this page in Chrome (or any modern browser).</li>
+        <li>Open DevTools → <strong>Network</strong> tab.</li>
+        <li>Tick <strong>“Offline”</strong>.</li>
+        <li>Refresh the page.</li>
+        <li>If you can still see this page, the offline cache works.</li>
+      </ol>
+    </div>
+
+    <!-- ⭐ NEW: This is where the Service Worker status appears -->
+    <p id="sw-status" class="status"></p>
+
+    <footer>
+      Part of the Final Year Project: HTML5 Offline Maps Application.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+

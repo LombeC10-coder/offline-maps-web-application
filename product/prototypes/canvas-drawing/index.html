@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Drawing App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🌟 Main centered container -->
+  <div id="app-container">
+
+    <h1>Canvas Drawing App</h1>
+
+    <!-- 🔹 Toolbar with all buttons -->
+    <div id="toolbar">
+      <button id="rectBtn">Rectangle</button>
+      <button id="circleBtn">Circle</button>
+      <button id="panBtn">Pan</button>
+      <button id="clearBtn">Clear</button>
+      <button id="themeToggle">Dark mode</button>
+    </div>
+
+    <!-- 🔹 Mode indicator -->
+    <p id="modeDisplay">Mode: Draw (Rectangle)</p>
+
+    <!-- 🔹 Drawing area -->
+    <canvas id="myCanvas" width="800" height="500"></canvas>
+
+    <!-- 🔹 Coordinate readout -->
+    <p id="coordsDisplay">Cursor: (–, –)</p>
+
+    <p>Click and drag to draw shapes on the canvas.</p>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
